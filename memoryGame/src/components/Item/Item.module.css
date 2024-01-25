@@ -1,7 +1,12 @@
 .item {
-    background-color: #6699CC;
-    padding: 32px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 24px;
+	color: #fdfffc;
+	background-color: #6699cc;
+	padding: 32px 52px;
+	border-radius: 12px;
+	cursor: pointer;
+	font-size: 32px;
+	font-weight: bold;
+	text-shadow: 2px 3px 2px #fc07bb;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+		rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
