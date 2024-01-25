@@ -9,7 +9,6 @@ function App() {
 	return (
 		<div className={styles.container}>
 			<h1 className={styles.header}>MEMORY NUMBERS</h1>
-
 			<h2 className={styles.playerMove}>Ruch gracza 1</h2>
 			<div className={styles.itemsBox}>
 				{shuffledItems.map(({ name, id }) => (

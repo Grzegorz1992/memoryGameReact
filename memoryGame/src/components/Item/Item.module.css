@@ -9,4 +9,17 @@
 	text-shadow: 2px 3px 2px #fc07bb;
 	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
 		rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+	transform: scale(1.1);
+}
+
+.hideItem {
+	color: #fdfffc;
+	background-color: #b37ba4;
+	padding: 32px 52px;
+	border-radius: 12px;
+	cursor: pointer;
+	font-size: 32px;
+	font-weight: bold;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+		rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
