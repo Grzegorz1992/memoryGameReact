@@ -1,0 +1,30 @@
+.container {
+	background-color: #FDFFFC;
+	padding: 24px 246px;
+	border-radius: 12px;
+	box-shadow: #FDFFFC 0px 2px 5px -1px,
+    #FDFFFC 0px 1px 3px -1px;
+}
+
+.header {
+	color: #FDFFFC;
+	background-color: #37393A;
+    font-size: 36px;
+	font-weight: bold;
+	padding: 16px;
+	border-radius: 12px;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.playerMove {
+	color: #FDFFFC;
+	background-color: #37393A;
+    font-size: 24px;
+    font-weight: bold;
+	padding: 12px;
+	text-align: center;
+	border-radius: 12px;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+	margin: 24px;
+}
+
