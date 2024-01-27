@@ -11,7 +11,7 @@ function App() {
 	const [clickedItems, setClickedItems] = useState([]);
 	const [currentPlayer, setCurrentPlayer] = useState(1);
 	const [playerScores, setPlayerScores] = useState({ 1: 0, 2: 0 });
-	const [matchedPairs, setMatchedPairs] = useState([]);
+	const [matchedItems, setMatchedItems] = useState([]);
 	const [disableClick, setDisableClick] = useState(false);
 	const shuffledItems = useMemo(() => shuffleArray(Items), []);
 
@@ -25,7 +25,10 @@ function App() {
 
 			setTimeout(() => {
 				if (firstCard && secondCard && firstCard.name === secondCard.name) {
-					setMatchedPairs((prevPairs) => [...prevPairs, firstCard.name]);
+					setMatchedItems((prevMatchedItems) => [
+						...prevMatchedItems,
+						firstCard.name,
+					]);
 					setPlayerScores((prevScores) => ({
 						...prevScores,
 						[currentPlayer]: prevScores[currentPlayer] + 1,
@@ -42,7 +45,7 @@ function App() {
 		}
 
 		if (
-			matchedPairs.length ===
+			matchedItems.length ===
 			[...new Set(Items.map((item) => item.name))].length
 		) {
 			const winner = playerScores[1] > playerScores[2] ? "Gracz 1" : "Gracz 2";
@@ -50,10 +53,10 @@ function App() {
 
 			resetGame();
 		}
-	}, [clickedItems, currentPlayer, shuffledItems, matchedPairs, playerScores]);
+	}, [clickedItems, currentPlayer, shuffledItems, matchedItems, playerScores]);
 
 	function handleItemClick(index) {
-		if (!disableClick && !matchedPairs.includes(shuffledItems[index]?.name)) {
+		if (!disableClick && !matchedItems.includes(shuffledItems[index]?.name)) {
 			const newItemShown = [...itemShown];
 			newItemShown[index] = true;
 			setItemShown(newItemShown);
@@ -66,7 +69,7 @@ function App() {
 		setClickedItems([]);
 		setCurrentPlayer(1);
 		setPlayerScores({ 1: 0, 2: 0 });
-		setMatchedPairs([]);
+		setMatchedItems([]);
 	}
 
 	return (
@@ -76,11 +79,11 @@ function App() {
 			<div className={styles.itemsBox}>
 				{shuffledItems.map(({ name, key, id }, index) => (
 					<Item
-						name={itemShown[index] || matchedPairs.includes(name) ? name : "?"}
+						name={itemShown[index] || matchedItems.includes(name) ? name : "?"}
 						key={key}
 						id={id}
 						className={
-							itemShown[index] || matchedPairs.includes(name)
+							itemShown[index] || matchedItems.includes(name)
 								? styles.item
 								: styles.hideItem
 						}
@@ -88,7 +91,9 @@ function App() {
 					></Item>
 				))}
 			</div>
-			<button className={styles.resetBtn} onClick={resetGame}>RESET</button>
+			<button className={styles.resetBtn} onClick={resetGame}>
+				RESET
+			</button>
 			<ScoreBoard
 				player1={"Player nr 1:"}
 				player2={"Player nr 2:"}
