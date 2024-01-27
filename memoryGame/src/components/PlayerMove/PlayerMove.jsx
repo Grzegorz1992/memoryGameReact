@@ -1,5 +1,5 @@
 import styles from "./PlayerMove.module.css";
 
-export function PlayerMove() {
-	return <h2 className={styles.playerMove}>Ruch gracza 1</h2>;
+export function PlayerMove({children}) {
+	return <h2 className={styles.playerMove}>{children}</h2>;
 }
