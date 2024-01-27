@@ -1,0 +1,22 @@
+.scoreBoardBox {
+	display: flex;
+	gap: 20px;
+}
+
+.playerScore {
+	color: #fff;
+	background-color: #37393a;
+	padding: 16px;
+	border-radius: 12px;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.scoreNumber {
+	color: #081bec;
+	background-color: #fff;
+	padding: 4px;
+	font-size: 22px;
+	box-shadow: #081bec 0px 2px 5px -1px, #081bec 0px 1px 3px -1px;
+}

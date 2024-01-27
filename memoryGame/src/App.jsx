@@ -4,6 +4,7 @@ import { Item } from "./components/Item/Item";
 import { shuffleArray } from "./utils/shuffleArray";
 import { Items } from "./utils/Items";
 import { PlayerMove } from "./components/PlayerMove/PlayerMove";
+import { ScoreBoard } from "./components/ScoreBoard/ScoreBoard";
 
 function App() {
 	const [itemShown, setItemShown] = useState(Array(Items.length).fill(false));
@@ -40,14 +41,13 @@ function App() {
 			}, 1000);
 		}
 
-		
 		if (
 			matchedPairs.length ===
 			[...new Set(Items.map((item) => item.name))].length
 		) {
 			const winner = playerScores[1] > playerScores[2] ? "Gracz 1" : "Gracz 2";
 			alert(`Koniec gry! Wygrywa ${winner}!`);
-			
+
 			resetGame();
 		}
 	}, [clickedItems, currentPlayer, shuffledItems, matchedPairs, playerScores]);
@@ -72,7 +72,7 @@ function App() {
 	return (
 		<div className={styles.container}>
 			<h1 className={styles.header}>MEMORY NUMBERS</h1>
-			<PlayerMove>Ruch gracza {currentPlayer}</PlayerMove>
+			<PlayerMove>Ruch gracza: {currentPlayer}</PlayerMove>
 			<div className={styles.itemsBox}>
 				{shuffledItems.map(({ name, key, id }, index) => (
 					<Item
@@ -88,9 +88,13 @@ function App() {
 					></Item>
 				))}
 			</div>
-			<div>Gracz 1: {playerScores[1]}</div>
-			<div>Gracz 2: {playerScores[2]}</div>
 			<button onClick={resetGame}>Zresetuj grę</button>
+			<ScoreBoard
+				player1={"Gracz nr 1:"}
+				player2={"Gracz nr 2:"}
+				player1Score={playerScores[1]}
+				player2Score={playerScores[2]}
+			/>
 		</div>
 	);
 }
