@@ -72,7 +72,7 @@ function App() {
 	return (
 		<div className={styles.container}>
 			<h1 className={styles.header}>MEMORY NUMBERS</h1>
-			<PlayerMove>Ruch gracza: {currentPlayer}</PlayerMove>
+			<PlayerMove>Player move: {currentPlayer}</PlayerMove>
 			<div className={styles.itemsBox}>
 				{shuffledItems.map(({ name, key, id }, index) => (
 					<Item
@@ -88,10 +88,10 @@ function App() {
 					></Item>
 				))}
 			</div>
-			<button onClick={resetGame}>Zresetuj grę</button>
+			<button className={styles.resetBtn} onClick={resetGame}>RESET</button>
 			<ScoreBoard
-				player1={"Gracz nr 1:"}
-				player2={"Gracz nr 2:"}
+				player1={"Player nr 1:"}
+				player2={"Player nr 2:"}
 				player1Score={playerScores[1]}
 				player2Score={playerScores[2]}
 			/>
