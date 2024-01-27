@@ -3,10 +3,12 @@ import styles from "./App.module.css";
 import { Item } from "./components/Item/Item";
 import { shuffleArray } from "./utils/shuffleArray";
 import { Items } from "./utils/Items";
+import { PlayerMove } from "./components/PlayerMove/PlayerMove";
 
 function App() {
 	const [itemShown, setItemShown] = useState(Array(Items.length).fill(false));
 	const [clickedItems, setClickedItems] = useState([]);
+	const shuffledItems = useMemo(() => shuffleArray(Items), []);
 
 	function handleItemClick(index) {
 		if (clickedItems.length < 2 && !clickedItems.includes(index)) {
@@ -23,14 +25,14 @@ function App() {
 				}, 1000);
 			}
 		}
-	}
 
-	const shuffledItems = useMemo(() => shuffleArray(Items), []);
+		console.log()
+	}
 
 	return (
 		<div className={styles.container}>
 			<h1 className={styles.header}>MEMORY NUMBERS</h1>
-			<h2 className={styles.playerMove}>Ruch gracza 1</h2>
+			<PlayerMove/>
 			<div className={styles.itemsBox}>
 				{shuffledItems.map(({ name, key, id }, index) => (
 					<Item
