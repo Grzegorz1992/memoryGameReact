@@ -5,6 +5,7 @@ import { shuffleArray } from "./utils/shuffleArray";
 import { Items } from "./utils/Items";
 import { PlayerMove } from "./components/PlayerMove/PlayerMove";
 import { ScoreBoard } from "./components/ScoreBoard/ScoreBoard";
+import { ResetButton } from "./components/ResetButton/ResetButton";
 
 function App() {
 	const [itemShown, setItemShown] = useState(Array(Items.length).fill(false));
@@ -75,7 +76,7 @@ function App() {
 	return (
 		<div className={styles.container}>
 			<h1 className={styles.header}>MEMORY NUMBERS</h1>
-			<PlayerMove>Player move: {currentPlayer}</PlayerMove>
+			<PlayerMove>{`Player ${currentPlayer}'s move`}</PlayerMove>
 			<div className={styles.itemsBox}>
 				{shuffledItems.map(({ name, key, id }, index) => (
 					<Item
@@ -91,9 +92,7 @@ function App() {
 					></Item>
 				))}
 			</div>
-			<button className={styles.resetBtn} onClick={resetGame}>
-				RESET
-			</button>
+			<ResetButton onClick={resetGame} />
 			<ScoreBoard
 				player1={"Player nr 1:"}
 				player2={"Player nr 2:"}
