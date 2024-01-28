@@ -44,4 +44,24 @@
 	color: #00ff41;
 	background-color: #074f07;
 	text-shadow: none;
+	transform: scale(1);
+}
+
+@media only screen and (max-width: 1600px) {
+	.container {
+		gap: 20px;
+		padding: 16px 96px;
+	}
+
+	.header {
+		padding: 12px;
+		font-size: 28px;
+	}
+
+	.item,
+	.hideItem {
+		padding: 24px 38px;
+		font-size: 26px;
+		font-weight: bold;
+	}
 }

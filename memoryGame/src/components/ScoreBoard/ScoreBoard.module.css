@@ -28,3 +28,17 @@
 	font-size: 26px;
 	border-radius: 12px;
 }
+
+@media only screen and (max-width: 1600px) {
+	.playerScore1,
+	.playerScore2 {
+		padding: 16px;
+		font-size: 16px;
+		letter-spacing: 1px;
+	}
+
+	.scoreNumber {
+		padding: 4px;
+		font-size: 20px;
+	}
+}
