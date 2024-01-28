@@ -20,10 +20,10 @@ function App() {
 	const [showModal, setShowModal] = useState(false);
 	const winner =
 		playerScores[1] > playerScores[2]
-			? "Gracz 1"
+			? "Player 1"
 			: playerScores[2] > playerScores[1]
-			? "Gracz 2"
-			: "Remis";
+			? "Player 2"
+			: "Draw";
 
 	useEffect(() => {
 		if (clickedItems.length === 2) {
@@ -120,8 +120,8 @@ function App() {
 			</div>
 			{showModal && (
 				<GameResult
-					text={`Koniec gry! ${
-						winner === "Remis" ? "Remis" : `Wygrywa ${winner}!`
+					text={`${
+						winner === "Draw" ? "Draw" : `${winner} wins!`
 					}`}
 				>
 					<ResetButton onClick={resetGame} />
