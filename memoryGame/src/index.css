@@ -7,8 +7,15 @@
 body {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	padding: 16px;
 	font-family: Helvetica, sans-serif;
 	background-image: url("./assets/matrix-3109378_1280.jpg");
 	background-size: auto;
+}
+
+@media only screen and (max-width: 800px) {
+	body {
+		padding: 180px;
+	}
 }

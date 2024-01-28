@@ -15,3 +15,11 @@
 	font-weight: bold;
 	border: 2px solid #00ff41;
 }
+
+@media only screen and (max-width: 800px) {
+	.gameResult {
+		gap: 10px;
+		padding: 40px 140px;
+		font-size: 16px;
+	}
+}

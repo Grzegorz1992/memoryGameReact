@@ -70,3 +70,22 @@
 		font-weight: bold;
 	}
 }
+
+@media only screen and (max-width: 800px) {
+	.container {
+		gap: 20px;
+		padding: 12px 28px;
+	}
+
+	.header {
+		padding: 8px;
+		font-size: 18px;
+	}
+
+	.item,
+	.hideItem {
+		padding: 14px 24px;
+		font-size: 28px;
+		font-weight: bold;
+	}
+}

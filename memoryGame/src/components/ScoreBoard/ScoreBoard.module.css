@@ -42,3 +42,22 @@
 		font-size: 20px;
 	}
 }
+@media only screen and (max-width: 800px) {
+	.playerScore1,
+	.playerScore2 {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 8px;
+		font-size: 14px;
+		font-weight: bold;
+		letter-spacing: none;
+	}
+
+	.scoreNumber {
+		padding: 4px;
+		text-align: center;
+		font-size: 18px;
+		border-radius: 12px;
+	}
+}
