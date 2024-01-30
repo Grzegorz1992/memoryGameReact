@@ -11,7 +11,7 @@
 * The winner is the player with more points at the end of the game.
 
 #### Link to the game
-https://memorynumbers.netlify.app/
+ https://memorynumbers.netlify.app/
 
 #### Have fun!
 
